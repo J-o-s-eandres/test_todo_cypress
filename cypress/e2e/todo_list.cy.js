@@ -26,26 +26,31 @@ function getTaskRandom() {
   return TaskRandom;
 }
 
+describe('template spec', () => {
+  beforeEach(() => {
+    cy.visit('https://j-o-s-eandres.github.io/todo-list/');
+  });
+
+  it('Create and delete 10 tasks', () => {
+    // Create 10 tasks
+    for (let i = 0; i < 10; i++) {
+      cy.get('#input').click();
+      cy.get('#input').type(getTaskRandom());
+      cy.wait(500);
+      cy.get('#enter').click();
+    }
+
+    // Delete task by task.
+    for (let i = 0; i < 10; i++) {
+      cy.get('i.fas.fa-trash.de[data="eliminado"]').first().click();
+      cy.wait(1000);
+    }
+  });
+});
 
 
 
-describe('template spec',()=>{
 
-    beforeEach(() => {
-        cy.visit('https://j-o-s-eandres.github.io/todo-list/');
-    
-      });
-
-      it('Task Life Cycle', () =>{
-        cy.get('#input').click()
-        cy.get('#input').type(getTaskRandom())
-        cy.wait(1000);
-        cy.get('#enter').click()
-        cy.get('i.far.fa-circle[data="realizado"]').first().click();
-        cy.wait(1000);
-        cy.get('i.fas.fa-trash.de[data="eliminado"]').first().click();
-      })
-})
 
 
 
