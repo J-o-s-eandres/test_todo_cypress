@@ -39,10 +39,13 @@ The tests use a custom function called `getTaskRandom()` to select a random task
 
 ## Test Results 🔬🔬🔬📊 📊 📊 
 
+
+
 After running the tests, Cypress will generate test results, including information on passed and failed tests. You can view the results in the Cypress test runner interface or generate HTML reports for a more detailed analysis.
+
+<img src="image.png" alt="Mi Imagen" width="150" height="100">
 
 ## License
 
 This Cypress test suite is provided under the [MIT License](LICENSE).
 ```
-
